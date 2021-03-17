@@ -14,7 +14,7 @@
    <script language="javascript">
      document.oncontextmenu = function(e){
       return false;
-     } 
+     }
    </script>
  </head> 
  <body> 
@@ -24,16 +24,11 @@
         <tr>
           <td colspan="5">교탁</td>  
         </tr>
-        <tr>
-          <th>1</th>
-          <th>6</th>
-          <th>11</th>
-          <th>16</th>
-          <th>21</th>
-        </tr>
-       <tr>
-        <td>2</td>
-       </tr>
+       <script language="javascript">
+       if(!i)
+        var i=0;
+        document.write('<tr><td>'+i+1+'</td></tr>');
+     </script>
     </table>
   </div> 
  </body>
