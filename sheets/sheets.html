@@ -9,7 +9,13 @@
    
    <style type="text/css">
      body { margin:0px; text-align:center; }
-     table { width:300px; font-size:18px; }
+     table { width:500px; line-height:30px;}
+     td { width:100px; }
+	 
+	 @media(max-width:500px){
+		table { width:300px; }
+		td { width: 60px; }
+	}
    </style>
    <script language="javascript">
      document.oncontextmenu = function(e){
@@ -21,17 +27,40 @@
   <h1>3학년 4반 자리배치</h1> 
   <div>
    <table border="1" align="center">
-        <tr>
-          <td colspan="5">교탁</td>  
-        </tr>
-        <tr>
-          <th>1</th>
-          <th>2</th>
-          <th>3</th>
-          <th>4</th>
-          <th>5</th>
+   <script language="javascript">
+	// 배열 섞기
+	function shuffle(arr){
+		var i=0,j=0,x=0;
+		for (i=arr.length; i; i-=1){
+			j = Math.floor(Math.random()*i);
+			x = arr[i-1];
+			arr[i-1] = arr[j];
+			arr[j] = x;
+		}
+	}
+	
+	const students = ['1. 경지희', '2. 김동현', '3. 김재희', '4. 나재민', '5. 문태윤', '6. 박수현', '7. 박진석', '8. 신준수', '9. 심윤아', '10. 오대산', '11. 윤병현', '12. 이강희', '13. 이다은', '14. 이동현', '15. 이아현', '16. 이하린', '17. 장우혁', '18. 장지수', '19. 정상수', '20. 정윤철', '21. 정은송', '22. 정해찬', '23. 조아름', '24. 지수민', '25. 한다은'];
+	shuffle(students);
+		
+        for(i=0; i<students.length; i++){
+      	   if (i%5==0){
+         	 document.write('</tr><tr><td>'+(students[i])+'</td>');
+        	} 
+        	 else{
+         	 document.write('<td>'+(students[i])+'</td>');
+       	  }
+       }
+  </script>
         </tr>
     </table>
-  </div> 
+    <table border="1" align="center" style="margin-top:25px; width:100px;">
+        <tr>
+          <th>교탁</th>  
+        </tr>
+   </table>
+	<div style="margin:100px;">
+		<input type="button" value="인쇄" onclick="window.print()">
+	</div>
+  </div>
  </body>
 </html>
