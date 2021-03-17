@@ -26,7 +26,7 @@
  <body> 
   <h1>3학년 4반 자리배치</h1> 
   <div>
-   <table border="1" align="center">
+   <table border="1" align="center"> 
    <script language="javascript">
 	// 배열 섞기
 	function shuffle(arr){
@@ -50,6 +50,12 @@
          	 document.write('<td>'+(students[i])+'</td>');
        	  }
        }
+	   
+	   function sheets_print(){
+	    document.querySelector('p').style.display='none';
+		document.querySelector('#print').style.display='none';
+		print();
+	   }
   </script>
         </tr>
     </table>
@@ -59,7 +65,7 @@
         </tr>
    </table>
 	<div style="margin:100px;">
-		<input type="button" value="인쇄" onclick="window.print()">
+		<input type="button" value="인쇄" onclick="sheets_print();" id="print">
 		<p>
 			모바일 환경에선 해당 인쇄 버튼으로 인쇄를 할 수 없습니다. 별도의 프린트 서비스를 사용하시길 바랍니다.
 		</p>
