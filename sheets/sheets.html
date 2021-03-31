@@ -39,6 +39,44 @@
 		}
 	}
 	
+	// 날짜 객체
+	let today = new Date();
+	
+	let day = today.getDay();  // 요일 = 숫자 데이터로 리턴됨.
+	// 이 외 날짜 데이터는 toLocaleDateString() 함수를 이용해 한 번에 출력 가능.
+	
+	// 숫자로 리턴된 요일 데이터를 문자열로 대체
+	switch(day){
+		case 0:
+			day = "(일)";
+			break;
+		case 1:
+			day = "(월)";
+			break;
+		case 2:
+			day = "(화)";
+			break;
+		case 3:
+			day = "(수)";
+			break;
+		case 4:
+			day = "(목)";
+			break;
+		case 5:
+			day = "(금)";
+			break;
+		case 6:
+			day = "(토)";
+			break;
+	}
+
+	// 날짜 구하기
+	let start_date = today.toLocaleDateString()+day;
+	
+	today.setDate(today.getDate() + 14); // 2주(14일) 후로 날짜 데이터 갱신
+	
+	let end_date = today.toLocaleDateString()+day;
+	
 	const students = ['1. 경지희', '2. 김동현', '3. 김재희', '4. 나재민', '5. 문태윤', '6. 박수현', '7. 박진석', '8. 신준수', '9. 심윤아', '10. 오대산', '11. 윤병현', '12. 이강희', '13. 이다은', '14. 이동현', '15. 이아현', '16. 이하린', '17. 장우혁', '18. 장지수', '19. 정상수', '20. 정윤철', '21. 정은송', '22. 정해찬', '23. 조아름', '24. 지수민', '25. 한다은'];
 	
 	var i = 0;
@@ -68,10 +106,20 @@
           <th>교탁</th>  
         </tr>
    </table>
+    <table border="0" align="center">
+		<tr>
+			<td>
+				<script language="javascript">
+					document.write(start_date+' ~ '+end_date);
+				</script>
+			</td>
+		</tr>
+	</table>
 	<div style="margin:100px;">
 		<input type="button" value="인쇄" onclick="sheets_print();" id="print">
 		<p>
-			모바일 환경에선 해당 인쇄 버튼으로 인쇄를 할 수 없습니다. 별도의 프린트 서비스를 사용하시길 바랍니다.
+			모바일 환경에선 해당 인쇄 버튼으로 인쇄를 할 수 없습니다. 별도의 프린트 서비스를 사용하시길 바랍니다.<br>
+			또한, 자바스크립트 기반으로 만들어진 프로그램이므로 자바스크립트 설정이 허용된 브라우저를 사용해주시기 바랍니다.
 		</p>
 	</div>
   </div>
