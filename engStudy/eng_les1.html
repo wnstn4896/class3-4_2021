@@ -12,7 +12,7 @@
 	<style type="text/css">
 		#container { text-align:center; }
 		table { width:300px; }
-		th { background-color:lightgreen; width:150px; }
+		th { background-color:lightgreen; }
 		.btn { width: 80px; text-align:center; }
 		.blind, .blind2 { display:none; }
 	</style>
@@ -65,7 +65,9 @@
 				<tr>
 					<td>
 						<script language="javascript">
-						var ran = Math.floor(Math.random()*word.length);
+						var i=0, ran=0;
+						for (i=5; i<=30; i++)
+							ran = Math.floor(Math.random()*word.length-1);
 						document.write(word[ran]+'</td>');
 							document.write('<td class="blind">'+meanings[ran]);
 						</script>
