@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	
+	<meta http-equiv="Content-Script-Type" content="text/javascript"/>
+	<meta http-equiv="Content-Style-Type" content="text/css"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width">
+	
+	<style type="text/css">
+		#container { text-align:center; }
+		table { width:300px; }
+		th { background-color:lightgreen; }
+		.btn { width: 80px; text-align:center; }
+		.blind, .blind2 { display:none; }
+	</style>
+	
+	<script language="javascript">
+		document.oncontextmenu = function(e){
+			return false;
+		}
+		
+		function Result(){
+			document.querySelector('.blind').style.display='block';
+			document.querySelector('.blind2').style.display='block';
+		}
+		
+		const word = ['challenge', 'evaluate', 'matter', 'achieve', 'mindset', 'not yet', 'imply',
+		'eventually', 'alternative', 'improvement', 'critical', 'cope with', 'positive', 'process',
+		'intelligence', 'cheat', 'confront', 'the former ... the latter ~', 'intellectually',
+		'make or break', 'talent', 'trap', 'executive', 'in contrast to', 'extraordinary',
+		'persist', 'hesitation', 'mental', 'enormous', 'reevaluate', 'central', 'superiority',
+		'confess', 'promote', 'innovation', 'privilege', 'pursue', 'neglect' ,'consequence',
+		'depend on', 'praise', 'regardless of', 'anticipate', 'bring about', 'conscious',
+		'break free of'];
+		
+		const meanings = ['과제, 도전', '평가하다', '중요하다, 문제가 되다', '성취하다, 달성하다', '마음가짐, 사고방식',
+		'아직 ~않다', '~의 뜻을 내포하다', '결국', '선택지, 대안', '개선, 진보', '중대한, 결정적인', '~에 대처[대응]하다',
+		'긍정적인', '과정', '지능', '부정행위를 하다', '맞서다', '전자는 ..., 후자는 ~', '지적으로', '~의 성패를 좌우하다',
+		'재능', '가두다, 덫을 놓다', '경영 간부, 관리직', '~와 대조를 이루어, ~와는 대조적으로', '비상한', '집요하게[고집스럽게] 계속하다',
+		'주저, 망설임', '마음의, 정신의', '엄청난, 거대한', '재평가하다', '주된', '우월', '고백하다, 털어놓다', '촉진하다, 장려하다',
+		'혁신', '특권, 특전', '추구하다', '무시하다, 경시하다', '결과, 결론', '~에 의존하다, 따르다', '칭찬하다', '~에도 불구하고, ~에 관계없이',
+		'예상하다, 예견하다', '~을 가져오다, 초래하다', '의식하고 있는', '~에서 벗어나다'];
+	</script>
+	
+	<title>1과 랜덤 영단어 퀴즈</title>
+</head>
+<body>
+	<div id="container">
+		<div>
+			<h1>1과 랜덤 영단어 퀴즈</h1>
+			<hr>
+			<input type="button" value="6과" onclick="alert('미완성')" class="btn">
+			<!-- location.href='eng_les6.html'; -->
+			<hr>
+		</div>
+		<div>
+			<table border="1" align="center">
+				<tr>
+					<th>영단어</th>
+					<th>의미</th>
+				</tr>
+				<tr>
+					<td>
+						<script language="javascript">
+						var ran = Math.floor(Math.random()*word.length);
+						document.write(word[ran]+'</td>');
+							document.write('<td class="blind">'+meanings[ran]);
+						</script>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						메모<br>
+						<input type="text"><br>
+						<p>
+							<input type="button" value="정답 확인" onclick="Result()" class="btn">
+						</p>
+						<p class="blind2">
+							메모한 의미와 상단 영단어의 의미가 같은지 확인하고, 다시 하시려면 새로고침 해주세요.
+						</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<noscript>
+			<p>이 페이지는 자바스크립트를 기반으로 만들어진 페이지이므로, 브라우저 설정에서 자바스크립트를 허용해주시길 바랍니다.</p>
+		</noscript>
+	</div>
+</body>
+</html>
