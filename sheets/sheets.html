@@ -72,7 +72,7 @@
 
 	// 날짜 구하기
 	const date_term = prompt('기준 날짜는 현재 날짜에서 며칠 후입니까?', 0); // 입력창, 초기값은 0
-	today.setDate(today.getDate() + date_term); // 입력한 텀만큼 날짜 데이터를 갱신함. 
+	today.setDate(today.getDate() + parseInt(date_term)); // 입력한 텀만큼 날짜 데이터를 갱신함. 
 	let start_date = today.toLocaleDateString()+day;
 	
 	today.setDate(today.getDate() + 14); // 2주(14일) 후로 날짜 데이터 갱신
