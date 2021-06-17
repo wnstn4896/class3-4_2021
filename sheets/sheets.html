@@ -84,7 +84,7 @@
 	for (i=0; i<=Math.floor(Math.random()*100)+1; i++)
 		shuffle(students);
 		
-        for(i=0; i<students.length; i++){
+        for(i=students.length-1; i>=0; i--){
       	   if (i%5==0){
          	 document.write('</tr><tr><td>'+(students[i])+'</td>');
         	} 
